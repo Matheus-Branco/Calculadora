@@ -1,3 +1,5 @@
+using System.Drawing.Text;
+
 namespace Calculadora.WinFormsApp
 {
     public partial class TelaCalcular : Form
@@ -6,8 +8,12 @@ namespace Calculadora.WinFormsApp
         {
             InitializeComponent();
         }
+        private void radioBtnAdicao_CheckedChanged(object sender, EventArgs e, bool operacaoAdicao)
+        {
+            operacaoAdicao = true;
+        }
 
-        private void BtnCalcular(object sender, EventArgs e)
+        private void btnCalcular_Click(object sender, EventArgs e)
         {
             int primeiroNumero = Convert.ToInt32(primeiroN.Text);
             int segundoNumero = Convert.ToInt32(segundoN.Text);
@@ -18,19 +24,55 @@ namespace Calculadora.WinFormsApp
             bool operacaoDivisao = Convert.ToBoolean(radioBtnDivisao.Text);
             bool operacaoMultiplicacao = Convert.ToBoolean(radioBtnMultiplicacao.Text);
 
-            
+            List<string> historico = new List<string>();
 
+            if (radioBtnAdicao.Checked)
+            {
+                int Somar()
+                {
+                    res = primeiroNumero + segundoNumero;
+                    return res;
+                    historico.Add($"{primeiroNumero} + {segundoNumero} = {res}");
+                }
+            }
+            if (radioBtnSubtracao.Checked)
+            {
+                int Subtrair()
+                {
+                    res = primeiroNumero + segundoNumero;
+                    return res;
+                    historico.Add($"{primeiroNumero} + {segundoNumero} = {res}");
+                }
+            }
+            if (radioBtnDivisao.Checked)
+            {
+                int Dividir()
+                {
+                    res = primeiroNumero + segundoNumero;
+                    return res;
+                    historico.Add($"{primeiroNumero} + {segundoNumero} = {res}");
+                }
+            }
+            if (radioBtnMultiplicacao.Checked)
+            {
+                int Multiplicar()
+                {
+                    res = primeiroNumero + segundoNumero;
+                    return res;
+                    historico.Add($"{primeiroNumero} + {segundoNumero} = {res}");
+                }
+            }
+            foreach (var item in ListBoxHistorico.Items)
+            {
+                historico.Add(item.ToString());
+            }
         }
-
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void btnLimpar_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
+            primeiroN.Clear();
+            segundoN.Clear();
+            resultado.Text = "0";
+            ListBoxHistorico.Text = "Vazio";
         }
     }
 }

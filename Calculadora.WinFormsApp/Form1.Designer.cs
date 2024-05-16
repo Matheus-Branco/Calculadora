@@ -65,7 +65,6 @@ namespace Calculadora.WinFormsApp
             labalSegundoN.Size = new Size(165, 25);
             labalSegundoN.TabIndex = 7;
             labalSegundoN.Text = "Segundo Número:";
-            labalSegundoN.Click += SegundoN_Click;
             // 
             // primeiroN
             // 
@@ -82,7 +81,6 @@ namespace Calculadora.WinFormsApp
             segundoN.Name = "segundoN";
             segundoN.Size = new Size(100, 33);
             segundoN.TabIndex = 10;
-            segundoN.TextChanged += textBox2_TextChanged;
             // 
             // resultado
             // 
@@ -93,7 +91,6 @@ namespace Calculadora.WinFormsApp
             resultado.Size = new Size(43, 50);
             resultado.TabIndex = 11;
             resultado.Text = "0";
-            resultado.Click += resultado_Click;
             // 
             // btnCalcular
             // 
@@ -105,6 +102,7 @@ namespace Calculadora.WinFormsApp
             btnCalcular.TabIndex = 12;
             btnCalcular.Text = "Calcular";
             btnCalcular.UseVisualStyleBackColor = false;
+            btnCalcular.Click += btnCalcular_Click;
             // 
             // btnLimpar
             // 
@@ -116,6 +114,7 @@ namespace Calculadora.WinFormsApp
             btnLimpar.TabIndex = 13;
             btnLimpar.Text = "Limpar";
             btnLimpar.UseVisualStyleBackColor = false;
+            btnLimpar.Click += btnLimpar_Click;
             // 
             // ListBoxHistorico
             // 
@@ -126,6 +125,7 @@ namespace Calculadora.WinFormsApp
             ListBoxHistorico.Name = "ListBoxHistorico";
             ListBoxHistorico.Size = new Size(500, 229);
             ListBoxHistorico.TabIndex = 14;
+            ListBoxHistorico.Text = "";
             // 
             // groupBox1
             // 
@@ -199,7 +199,7 @@ namespace Calculadora.WinFormsApp
             radioBtnAdicao.Text = "Adição";
             radioBtnAdicao.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // TelaCalcular
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -214,7 +214,7 @@ namespace Calculadora.WinFormsApp
             Controls.Add(primeiroN);
             Controls.Add(labalSegundoN);
             Controls.Add(labelPrimeiroN);
-            Name = "Form1";
+            Name = "TelaCalcular";
             Text = "Calculadora";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -222,17 +222,7 @@ namespace Calculadora.WinFormsApp
             PerformLayout();
         }
 
-        private void resultado_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void SegundoN_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-#endregion
+        #endregion
         private Label labelPrimeiroN;
         private Label labalSegundoN;
         private TextBox primeiroN;

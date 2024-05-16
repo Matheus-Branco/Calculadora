@@ -12,11 +12,8 @@ namespace Calculadora.WinFormsApp
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new TelaCalcular());
-
-            if (operacaoAdicao)
-            {
-                Somar();
-            }
+            
+            
         }
     }
 }
